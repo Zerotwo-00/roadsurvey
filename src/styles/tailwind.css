@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --primary: #1d4ed8;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #334155;
+  --accent: #f59e0b;
+  --accent-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --border: #e2e8f0;
+  --input: #ffffff;
+  --ring: #1d4ed8;
+  --radius: 0.5rem;
+  --font-sans: var(--font-ibm-plex-sans-arabic), 'IBM Plex Sans Arabic', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    border-color: var(--border);
+  }
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    direction: rtl;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+  .input-field {
+    @apply w-full border border-border rounded-md px-3 py-2 text-sm bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent transition-colors;
+  }
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 active:scale-95 transition-colors cursor-pointer;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-slate-300 active:scale-95 transition-colors cursor-pointer;
+  }
+  .btn-danger {
+    @apply bg-red-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-700 active:scale-95 transition-colors cursor-pointer;
+  }
+  .btn-accent {
+    @apply bg-accent text-accent-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-yellow-500 active:scale-95 transition-colors cursor-pointer;
+  }
+  .card {
+    @apply bg-card border border-border rounded-lg p-4;
+  }
+  .section-title {
+    @apply text-base font-semibold text-foreground mb-3;
+  }
+  .label-text {
+    @apply text-sm font-medium text-foreground mb-1 block;
+  }
+  .helper-text {
+    @apply text-xs text-muted-foreground mt-1;
+  }
+  .result-value {
+    @apply text-lg font-bold text-primary tabular-nums;
+  }
+  .result-label {
+    @apply text-xs font-medium text-muted-foreground uppercase tracking-wide;
+  }
+  .mode-btn-active {
+    @apply bg-primary text-primary-foreground;
+  }
+  .mode-btn-inactive {
+    @apply bg-muted text-muted-foreground hover:bg-slate-200;
+  }
+}
